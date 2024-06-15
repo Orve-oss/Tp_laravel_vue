@@ -23,9 +23,21 @@ class Produit extends Model
     protected $primaryKey = 'CodePdt'; //definir la clé primaire
 
     protected $keyType = 'string';// definir le type de la clé primaire
-
+    public $timestamps = false;
     public static function getAllproducts(){
         return Self::where('ActifPdt', 1)->get(); /*Self : pour referencer la table courante, remplace Produit::
             Cette ligne retourne les produits qui sont actifs*/
+    }
+
+    public static function addProduit($data){
+
+        $pdt = new Self();
+        $pdt->CodePdt = $data->CodePdt;
+        $pdt->DesignPdt = $data->DesignPdt;
+        $pdt->ActifPdt = $data->ActifPdt;
+        $pdt->PrixAchat = $data->PrixAchat;
+        $pdt->PrixVente1 = $data->PrixVente1;
+        $pdt->PrixVente2 = $data->PrixVente2;
+        $pdt->save();
     }
 }
