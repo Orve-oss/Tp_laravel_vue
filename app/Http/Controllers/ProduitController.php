@@ -19,4 +19,8 @@ class ProduitController extends Controller
         // dd($request);
         Produit::addProduit($request);
     }
+
+    public function updatePdt(Request $request, $CodePdt){
+        Produit::updateProduit($CodePdt, $request);
+    }
 }

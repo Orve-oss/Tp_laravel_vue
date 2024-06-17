@@ -9,9 +9,8 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 
-
 onMounted(() =>{
     console.log(route.params.id);
 })
 </script>
-<style></style>
+<style ></style>
