@@ -11,4 +11,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/list', [ProduitController::class, 'listProduit']);
 Route::post('/saveproduit', [ProduitController::class, 'addPdt']);
-Route::put('/updateproduit/{CodePdt}', [ProduitController::class, 'updatePdt']);
+Route::get('/getonepdt/{code}',[ProduitController::class, 'getOneProduct']);
+// Route::put('/updateproduit/{CodePdt}', [ProduitController::class, 'updatePdt']);

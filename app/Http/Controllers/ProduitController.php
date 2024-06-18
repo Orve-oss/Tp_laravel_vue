@@ -23,4 +23,11 @@ class ProduitController extends Controller
     public function updatePdt(Request $request, $CodePdt){
         Produit::updateProduit($CodePdt, $request);
     }
+
+    public function getOneProduct($code)
+    {
+        $produit=Produit::getOneProduct($code);
+        return ProduitListResource::collection($produit);
+        
+    }
 }

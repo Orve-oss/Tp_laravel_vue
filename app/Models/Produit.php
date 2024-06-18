@@ -41,14 +41,8 @@ class Produit extends Model
         $pdt->save();
     }
 
-    public static function updateProduit($CodePdt, $data){
-        $product = Self::where('CodePdt', $CodePdt)->first();
-        $product->CodePdt = $data->CodePdt;
-        $product->DesignPdt = $data->DesignPdt;
-        $product->ActifPdt = $data->ActifPdt;
-        $product->PrixAchat = $data->PrixAchat;
-        $product->PrixVente1 = $data->PrixVente1;
-        $product->PrixVente2 = $data->PrixVente2;
-        $product->update();
+    public static function getOneProduct($CodePdt){
+      return  Self::where('CodePdt', $CodePdt)->get();
+
     }
 }
